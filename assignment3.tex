@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{epstopdf}
@@ -14,18 +14,20 @@
 	\newpage
 	\section*{Exercise I}
 	Question: How big is the MAC address space? The IPv4 address space? The Ipv6 address space?\\
+	\linebreak
 	$2^{48}$ MAC addresses; $2^{32}$ IPv4 addresses; $2^{128}$IPv6 addresses.
-	
+
 	\section*{Exercise II}
 	Question: Compare the frame structures for 10BASE-T, 100BASE-T,
-	and Gigabit Ethernet. How do they differ?\\ \\
+	and Gigabit Ethernet. How do they differ?\\
+	\linebreak
 	10BASE-T, 100BASE-T and Gigabit Ethernet have identical frame structure.
 	The only difference between the three technologies is speed at which they transmit the data.
 	The fields in the Ethernet frame structure are as follows:
 	\begin{itemize}
 		\item The “Data Field” is used to carry IP datagram and size is 46 to 1500 bytes.
 		\item 	The “Destination Address Field” contains destination adapter’s MAC address and size is 6 bytes.
-		\item 	The “Source Address Field” contains adapter’s MAC address that sends the frame to LAN and size is 6 bytes. 
+		\item 	The “Source Address Field” contains adapter’s MAC address that sends the frame to LAN and size is 6 bytes.
 		\item 	The “Type2 Field” helps the Ethernet to connect with multiplex network – layer protocols and size is 2 bytes.
 		\item The “Cycle Redundancy Check (CRC) field”, is used to detect the errors using the CRC field and size is 4 bytes.
 		\item 	The “Preamble field” is the first field used to identify the beginning of the Ethernet frame and size is 8 bytes.
@@ -33,17 +35,41 @@
 
 	\section*{Exercise III}
 	\section*{Exercise IV}
-	Question: If all the links in the Internet were to provide reliable delivery service, would the TCP reliable delivery service be redundant? Why or why not?\\ 
-	
+	Question: If all the links in the Internet were to provide reliable delivery service, would the TCP reliable delivery service be redundant? Why or why not?\\
+	\linebreak
 	TCP Reliable Delivery Service is not redundant. Although each link guarantees that an IP datagram sent over the link will be received at the other end of the link without errors, it is not guaranteed that the IP datagrams will arrive at the ultimate destination in the proper order. With IP, datagrams emerging from the same TCP connection can take different routes in the network, and therefore arrive out of order. TCP is still needed to provide the receiving end of the application the byte stream in the correct order, also, IP can lose packets due to routing loops or equipment failure.
-	
+
 	\section*{Exercise V}
-	Question: 
+	Question:
 	As a mobile node gets farther and farther away from a base station, what are two actions that a base station could take to ensure that the loss probability of a transmitted frame does not increase?\\
-	
+  \linebreak
 	The two possible ways are, 1) increasing the transmission power, and 2) reducing the transmission rate.
 	\section*{Exercise VI}
-	\section*{Exercise VII}	
+	Question:
+	For the computation of a cyclic redundancy check (CRC) the 5-bit generator G = 10011 is used. Suppose that the data to protect D has the value 0110100011. What is the value of the remainder R?\\
+    \linebreak
+	The remainder is: R = 1110
+	\section*{Exercise VII}
+	Question:
+	After the fifth collision, what is the probability that a node chooses K = 10?
+	The probability that a node chooses K = 10 is 1/32.
+	\linebreak
+	For K = 10, how many milliseconds does the adapter wait after a collision, until checking again if the channel is idle, for a 10 Mbps broadcast channel?
+	10 * 512 * 0.0001 = 0.5 ms
+	\linebreak
+	And how many milliseconds for K=1 and a 100 Mbps broadcast channel?
+	1 * 512 * 0.00001 = 0.005 ms
 	\section*{Exercise VIII}
+	Question:
+	How many hexadecimal digits are there in total in each of the MAC addresses of the stations? Motivate your answer.
+	Since the MAC address format we studied has 6 bytes per address, every station will have a MAC address composed of 12 hexadecimal digits.
+	Question:
+	Suppose that (i) at time 𝑡0, A broadcasts a frame; (ii) at time t1, B sends a frame to C; and (iii) at time t2 C replies with a frame to B. Assuming that the switch table is initially empty, shows the entries of the switch table after these events and describe the forwarding and filtering actions taken by the switch after each event. (You can use the last two hexadecimal dogots as a proxy of the MAC addresses of the stations. Motivate all your answers.
+	A broadcasts a frame: A will send a broadcast frame to all the stations in the network, and the switch table will register the MAC address 0A. The frame will be sent to all stations.
+	%Tabella
+	B sends a frame to C: B sends a frame to C. The switch will register the MAC address 0B, since there's no entry corresponding to that frame. MAC address of C isn't in the switch table, so the frame will be sent to everyone, except B.
+	%Tabella
+	C replies to B: C sends a frame to B. The switch will register the MAC address 0C, since there's no entry corresponding to that frame. MAC address of B is present in the switch table, so the frame is sent only to B.
+	%Tabella
 	\section*{Exercise IX}
 \end{document}
