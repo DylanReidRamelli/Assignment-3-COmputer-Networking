@@ -27,12 +27,12 @@
 	The only difference between the three technologies is the speed at which they transmit the data.
 	The fields in the Ethernet frame are like so:
 	\begin{itemize}
-		\item The Data Field is used to carry IP datagram and the size is between 46 to 1500 bytes.
-		\item 	The “Destination Address Field” contains destination adapter’s MAC address and it's size is 6 bytes.
+			\item 	The Preamble field is the first field used to identify the beginning of the Ethernet frame and size is 8 bytes.
 		\item 	The Source Address Field contains adapter’s MAC address that sends the frame to LAN and it's size is 6 bytes.
 		\item 	The Type2 Field helps the Ethernet to connect with multiplex network – layer protocols and it's size is 2 bytes.
+		\item The Data Field is used to carry IP datagram and the size is between 46 to 1500 bytes.
+		\item 	The “Destination Address Field” contains destination adapter’s MAC address and it's size is 6 bytes.
 		\item The Cycle Redundancy Check field, is used to detect the errors using the CRC field and it's size is 4 bytes.
-		\item 	The Preamble field is the first field used to identify the beginning of the Ethernet frame and size is 8 bytes.
 	\end{itemize}
 
 	\section*{Exercise III}
