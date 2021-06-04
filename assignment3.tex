@@ -100,17 +100,27 @@
 	Since the MAC address format we studied has 6 bytes per address, every station will have a MAC address composed of 12 hexadecimal digits.\\
 	Question:
 	Suppose that (i) at time t0, A broadcasts a frame; (ii) at time t1, B sends a frame to C; and (iii) at time t2 C replies with a frame to B. Assuming that the switch table is initially empty, shows the entries of the switch table after these events and describe the forwarding and filtering actions taken by the switch after each event. (You can use the last two hexadecimal digits as a proxy of the MAC addresses of the stations. Motivate all your answers.\\
-	A broadcasts a frame: A will send a broadcast frame to all the stations in the network, and the switch table will register the MAC address 0A. The frame will be sent to all stations.
-	%Tabella
-	B sends a frame to C: B sends a frame to C. The switch will register the MAC address 0B, since there's no entry corresponding to that frame. MAC address of C isn't in the switch table, so the frame will be sent to everyone, except B.
-	%Tabella
+	A broadcasts a frame: A will send a broadcast frame to all the stations in the network, and the switch table will register the MAC address 0A. The frame will be sent to all stations.\\
+	B sends a frame to C: B sends a frame to C. The switch will register the MAC address 0B, since there's no entry corresponding to that frame. MAC address of C isn't in the switch table, so the frame will be sent to everyone, except B.\\
 	C replies to B: C sends a frame to B. The switch will register the MAC address 0C, since there's no entry corresponding to that frame. MAC address of B is present in the switch table, so the frame is sent only to B.
-	%Tabella
+	\begin{center}
+    \begin{tabular}{|c c c|}
+    \hline
+    MAC Address & Interface & Time \\ [0.5ex]
+    \hline\hline
+    0A & 1 & 0 \\
+     \hline
+    0B & 2 & 1 \\
+     \hline
+    0C & 3 & 2 \\
+     \hline
+    \end{tabular}
+    \end{center}
 	\section*{Exercise IX}
 	\begin{itemize}
 		\item{a)} So the RTS/CTS sequence is skipped for all DATA frames sent, the default RTS threshold value is larger than the maximum frame length. So:
 		32 + 2 + 6 + 6 + 6 + 2 + 6 + 2312 + 4 = 2376. The RTS threshold ha value 2376.
-		\item{b)} 
+		\item{b)}
 		$t_{out}$ = DIFS + RTS + SIFS + CTS + SIFS + DATA + SIFS + ACK \\
 		Time to transmit the control datagram is 32bytes/11Mbps (RTS, CTS, ACK)\\
 		Time to transmit the control datagram is 2376bytes/11Mbps (DATA)\\
@@ -123,7 +133,7 @@
 			&= DIFS + 3 SIFS + 898.909090909 \mu sec
 		\end{aligned}
 		$$
-		\item{c)} 
+		\item{c)}
 		$$
 		\begin{aligned}
 			t_{out} &= DIFS + RTS + SIFS + CTS + SIFS + DATA + SIFS + ACK \\
