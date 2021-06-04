@@ -17,8 +17,6 @@
 	$2^{48}$ MAC addresses because it is a 48 bit address space; $2^{32}$ IPv4 addresses; $2^{128}$IPv6 addresses.
 	\linebreak
 	$2^{48}$ MAC addresses; $2^{32}$ IPv4 addresses; $2^{128}$IPv6 addresses.
-
->>>>>>> origin/main
 	\section*{Exercise II}
 	Question: Compare the frame structures for 10BASE-T, 100BASE-T,
 	and Gigabit Ethernet. How do they differ?\\
@@ -63,10 +61,10 @@
 	1 * 512 * 0.00001 = 0.005 ms
 	\section*{Exercise VIII}
 	Question:
-	How many hexadecimal digits are there in total in each of the MAC addresses of the stations? Motivate your answer.
-	Since the MAC address format we studied has 6 bytes per address, every station will have a MAC address composed of 12 hexadecimal digits.
+	How many hexadecimal digits are there in total in each of the MAC addresses of the stations? Motivate your answer.\\
+	Since the MAC address format we studied has 6 bytes per address, every station will have a MAC address composed of 12 hexadecimal digits.\\
 	Question:
-	Suppose that (i) at time 𝑡0, A broadcasts a frame; (ii) at time t1, B sends a frame to C; and (iii) at time t2 C replies with a frame to B. Assuming that the switch table is initially empty, shows the entries of the switch table after these events and describe the forwarding and filtering actions taken by the switch after each event. (You can use the last two hexadecimal dogots as a proxy of the MAC addresses of the stations. Motivate all your answers.
+	Suppose that (i) at time t0, A broadcasts a frame; (ii) at time t1, B sends a frame to C; and (iii) at time t2 C replies with a frame to B. Assuming that the switch table is initially empty, shows the entries of the switch table after these events and describe the forwarding and filtering actions taken by the switch after each event. (You can use the last two hexadecimal dogots as a proxy of the MAC addresses of the stations. Motivate all your answers.\\
 	A broadcasts a frame: A will send a broadcast frame to all the stations in the network, and the switch table will register the MAC address 0A. The frame will be sent to all stations.
 	%Tabella
 	B sends a frame to C: B sends a frame to C. The switch will register the MAC address 0B, since there's no entry corresponding to that frame. MAC address of C isn't in the switch table, so the frame will be sent to everyone, except B.
