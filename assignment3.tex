@@ -22,28 +22,29 @@
 	and Gigabit Ethernet. How do they differ?\\
 	\linebreak
 	10BASE-T, 100BASE-T and Gigabit Ethernet have identical frame structure.
-	The only difference between the three technologies is speed at which they transmit the data.
-	The fields in the Ethernet frame structure are as follows:
+	The only difference between the three technologies is the speed at which they transmit the data.
+	The fields in the Ethernet frame are like so:
 	\begin{itemize}
-		\item The “Data Field” is used to carry IP datagram and size is 46 to 1500 bytes.
-		\item 	The “Destination Address Field” contains destination adapter’s MAC address and size is 6 bytes.
-		\item 	The “Source Address Field” contains adapter’s MAC address that sends the frame to LAN and size is 6 bytes.
-		\item 	The “Type2 Field” helps the Ethernet to connect with multiplex network – layer protocols and size is 2 bytes.
-		\item The “Cycle Redundancy Check (CRC) field”, is used to detect the errors using the CRC field and size is 4 bytes.
-		\item 	The “Preamble field” is the first field used to identify the beginning of the Ethernet frame and size is 8 bytes.
+		\item The Data Field is used to carry IP datagram and the size is between 46 to 1500 bytes.
+		\item 	The “Destination Address Field” contains destination adapter’s MAC address and it's size is 6 bytes.
+		\item 	The Source Address Field contains adapter’s MAC address that sends the frame to LAN and it's size is 6 bytes.
+		\item 	The Type2 Field helps the Ethernet to connect with multiplex network – layer protocols and it's size is 2 bytes.
+		\item The Cycle Redundancy Check field, is used to detect the errors using the CRC field and it's size is 4 bytes.
+		\item 	The Preamble field is the first field used to identify the beginning of the Ethernet frame and size is 8 bytes.
 	\end{itemize}
 
 	\section*{Exercise III}
 	\section*{Exercise IV}
 	Question: If all the links in the Internet were to provide reliable delivery service, would the TCP reliable delivery service be redundant? Why or why not?\\
 	\linebreak
-	TCP Reliable Delivery Service is not redundant. Although each link guarantees that an IP datagram sent over the link will be received at the other end of the link without errors, it is not guaranteed that the IP datagrams will arrive at the ultimate destination in the proper order. With IP, datagrams emerging from the same TCP connection can take different routes in the network, and therefore arrive out of order. TCP is still needed to provide the receiving end of the application the byte stream in the correct order, also, IP can lose packets due to routing loops or equipment failure.
+	The Reliable Delivery Service of TCP is not redundant. \\
+	Each link guarantees that an IP datagram sent over the link will be received at the other end of the link without errors, this although does not guarantee that the IP datagrams will arrive at the final destination in the proper order. With IP, datagrams that come from the same TCP connection can take different routes in the network. TCP is still needed to provide the receiving end of the application the byte stream in the correct order.
 
 	\section*{Exercise V}
 	Question:
 	As a mobile node gets farther and farther away from a base station, what are two actions that a base station could take to ensure that the loss probability of a transmitted frame does not increase?\\
   \linebreak
-	The two possible ways are, 1) increasing the transmission power, and 2) reducing the transmission rate.
+  You could increase the transmission power or reduce the transmission rate.
 	\section*{Exercise VI}
 	Question:
 	For the computation of a cyclic redundancy check (CRC) the 5-bit generator G = 10011 is used. Suppose that the data to protect D has the value 0110100011. What is the value of the remainder R?\\
