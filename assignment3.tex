@@ -108,11 +108,11 @@
     \hline
     MAC Address & Interface & Time \\ [0.5ex]
     \hline\hline
-    0A & 1 & 0 \\
+    0A & 1 & $t_0$ \\
      \hline
-    0B & 2 & 1 \\
+    0B & 2 & $t_1$ \\
      \hline
-    0C & 3 & 2 \\
+    0C & 3 & $t_2$ \\
      \hline
     \end{tabular}
     \end{center}
@@ -122,25 +122,28 @@
 		32 + 2 + 6 + 6 + 6 + 2 + 6 + 2312 + 4 = 2376. The RTS threshold ha value 2376.
 		\item{b)}
 		$t_{out}$ = DIFS + RTS + SIFS + CTS + SIFS + DATA + SIFS + ACK \\
-		Time to transmit the control datagram is 32bytes/11Mbps (RTS, CTS, ACK)\\
+		RTS = 0\\
+		CTS = 0\\
+		Time to transmit the control datagram is 32bytes/11Mbps (ACK)\\
 		Time to transmit the control datagram is 2376bytes/11Mbps (DATA)\\
 		$$
 		\begin{aligned}
-			t_{out} &= DIFS + RTS + SIFS + CTS + SIFS + DATA + SIFS + ACK \\
-			&= DIFS + 3 SIFS + 3 \cdot \dfrac{32 bytes}{11 Mbps} + \dfrac{2376 bytes}{11 Mbps}\\
-			&= DIFS + 3 SIFS + 3 \cdot \dfrac{128 bits}{11 Mbps} + \dfrac{9504 bytes}{11 Mbps}\\
-			&= DIFS + 3 SIFS + 34.9090909091 \mu sec + 864 \mu sec\\
-			&= DIFS + 3 SIFS + 898.909090909 \mu sec
+			t_{out} &= DIFS  + SIFS  + SIFS + DATA + SIFS + ACK \\
+			&= DIFS + 3 \cdot SIFS + 1 \cdot \dfrac{32 bytes}{11 Mbps} + \dfrac{2376 bytes}{11 Mbps}\\
+			&= DIFS + 3 \cdot  SIFS + 1 \cdot \dfrac{128 bits}{11 Mbps} + \dfrac{9504 bytes}{11 Mbps}\\
+			&= DIFS + 3 \cdot SIFS + 11.6363636364 \mu sec + 864 \mu sec\\
+			&= DIFS + 3 \cdot SIFS + 875.636363636 \mu sec
 		\end{aligned}
 		$$
 		\item{c)}
 		$$
 		\begin{aligned}
-			t_{out} &= DIFS + RTS + SIFS + CTS + SIFS + DATA + SIFS + ACK \\
-			&= DIFS + 3 SIFS + 898.909090909 \mu sec \\
-			&= 50 \mu sec + 30 \mu sec + 898.909090909 \mu sec\\
-			&= 978.909090909 \mu sec
+			t_{out} &= DIFS  + SIFS  + SIFS + DATA + SIFS + ACK \\
+			&= DIFS + 3 SIFS + 875.636363636 \mu sec \\
+			&= 50 \mu sec + 30 \mu sec + 875.636363636 \mu sec\\
+			&= 955.636363636 \mu sec
 		\end{aligned}
 		$$
+		\item{d)} The received power should be 0.1mW.
 	\end{itemize}
 \end{document}
