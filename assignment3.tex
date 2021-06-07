@@ -128,20 +128,20 @@
 		Time to transmit the control datagram is 2376bytes/11Mbps (DATA)\\
 		$$
 		\begin{aligned}
-			t_{out} &= DIFS  + SIFS  + SIFS + DATA + SIFS + ACK \\
-			&= DIFS + 3 \cdot SIFS + 1 \cdot \dfrac{32 bytes}{11 Mbps} + \dfrac{2376 bytes}{11 Mbps}\\
-			&= DIFS + 3 \cdot  SIFS + 1 \cdot \dfrac{128 bits}{11 Mbps} + \dfrac{9504 bytes}{11 Mbps}\\
-			&= DIFS + 3 \cdot SIFS + 11.6363636364 \mu sec + 864 \mu sec\\
-			&= DIFS + 3 \cdot SIFS + 875.636363636 \mu sec
+			t_{out} &= DIFS  + SIFS + DATA + SIFS + ACK \\
+			&= DIFS + 2 \cdot SIFS + 1 \cdot \dfrac{32 bytes}{11 Mbps} + \dfrac{2376 bytes}{11 Mbps}\\
+			&= DIFS + 2 \cdot  SIFS + 1 \cdot \dfrac{128 bits}{11 Mbps} + \dfrac{9504 bytes}{11 Mbps}\\
+			&= DIFS + 2 \cdot SIFS + 11.6363636364 \mu sec + 864 \mu sec\\
+			&= DIFS + 2 \cdot SIFS + 875.636363636 \mu sec
 		\end{aligned}
 		$$
 		\item{c)}
 		$$
 		\begin{aligned}
 			t_{out} &= DIFS  + SIFS  + SIFS + DATA + SIFS + ACK \\
-			&= DIFS + 3 SIFS + 875.636363636 \mu sec \\
-			&= 50 \mu sec + 30 \mu sec + 875.636363636 \mu sec\\
-			&= 955.636363636 \mu sec
+			&= DIFS + 2 SIFS + 875.636363636 \mu sec \\
+			&= 50 \mu sec + 20 \mu sec + 875.636363636 \mu sec\\
+			&= 945.636363636 \mu sec
 		\end{aligned}
 		$$
 		\item{d)} The received power should be 0.1mW.
